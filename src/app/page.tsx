@@ -1,95 +1,33 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+import { Button, Card, Center } from "@chakra-ui/react";
+
+import Link from "next/link";
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+    return (
+        <Center height='100vh'>
+            <div style={{ margin: "10px" }}></div>
+            <Card.Root width={460} p={12} gap={8}>
+                <Card.Body gap={2}>
+                    <Card.Title textStyle='2xl'>X vs O: Ultimate Showdown</Card.Title>
+                    <Card.Description>
+                        シンプルにして奥深い、究極の頭脳戦。
+                        「三目並べ」を超えた、戦略と直感のバトルが今ここに。
+                        友達と、またはAIと、限界まで読み合え。 あなたの “X”
+                        は、勝利の一手になれるか？
+                    </Card.Description>
+                </Card.Body>
+                <Card.Footer justifyContent='space-between'>
+                    <Button variant='outline' px={4} flex={1}>
+                        設定
+                    </Button>
+                    <Link href='/game' passHref style={{ flex: 1 }}>
+                        <Button px={4} w='100%'>
+                            始める
+                        </Button>
+                    </Link>
+                </Card.Footer>
+            </Card.Root>
+        </Center>
+    );
 }
