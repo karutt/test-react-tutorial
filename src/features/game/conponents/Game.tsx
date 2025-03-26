@@ -27,7 +27,7 @@ export function Game() {
     };
 
     return (
-        <Center h='100vh' alignItems={{ base: "flex-start", md: "center" }}>
+        <Center h='100svh' alignItems={{ base: "flex-start", md: "center" }}>
             <Stack
                 alignItems={{ base: "start", md: "end" }}
                 direction={{ base: "column-reverse", md: "column" }}>
