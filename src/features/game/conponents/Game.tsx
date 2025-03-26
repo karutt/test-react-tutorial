@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Center, HStack, VStack } from "@chakra-ui/react";
+import { Button, Center, Stack } from "@chakra-ui/react";
 import Link from "next/link";
 import { useState } from "react";
 import { MdOutlineArrowBack } from "react-icons/md";
@@ -27,19 +27,26 @@ export function Game() {
     };
 
     return (
-        <Center h='100vh'>
-            <VStack alignItems='end'>
-                <HStack gap={6}>
+        <Center h='100vh' alignItems={{ base: "flex-start", md: "center" }}>
+            <Stack
+                alignItems={{ base: "start", md: "end" }}
+                direction={{ base: "column-reverse", md: "column" }}>
+                <Stack
+                    gap={6}
+                    px={3}
+                    direction={{ base: "column", md: "row" }}
+                    w={{ base: "100vw", md: "auto" }}
+                    alignItems='center'>
                     <Board squares={squares} xIsNext={xIsNext} onPlay={handlePlay} />
                     <HistoryTable history={history} jumpTo={jumpTo} />
-                </HStack>
+                </Stack>
                 <Link href='/' passHref>
                     <Button variant='plain' gap={1}>
                         <MdOutlineArrowBack />
                         Home
                     </Button>
                 </Link>
-            </VStack>
+            </Stack>
         </Center>
     );
 }

@@ -4,9 +4,8 @@ import Link from "next/link";
 
 export default function Home() {
     return (
-        <Center height='100vh'>
-            <div style={{ margin: "10px" }}></div>
-            <Card.Root width={460} p={12} gap={8}>
+        <Center height='100vh' px={3}>
+            <Card.Root maxWidth={460} p={12} gap={8}>
                 <Card.Body gap={2}>
                     <Card.Title textStyle='2xl'>X vs O: Ultimate Showdown</Card.Title>
                     <Card.Description>

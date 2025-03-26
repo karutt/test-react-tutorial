@@ -7,8 +7,13 @@ interface HistoryTableProps {
 
 export default function HistoryTable({ history, jumpTo }: HistoryTableProps) {
     return (
-        <VStack border='solid 1px' borderColor='border.muted' borderRadius='lg' h={360}>
-            <Table.Root w={220} interactive variant='outline'>
+        <VStack
+            border='solid 1px'
+            borderColor='border.muted'
+            borderRadius='lg'
+            h={{ base: "auto", md: 360 }}
+            w={{ base: "100%", md: "auto" }}>
+            <Table.Root w={{ base: "100%", md: 220 }} interactive variant='outline'>
                 <Table.Header>
                     <Table.Row>
                         <Table.Cell px={2} py={1} textAlign='center'>

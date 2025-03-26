@@ -28,7 +28,7 @@ export function Board({ squares, xIsNext, onPlay }: BoardProps) {
           : `Next player: ${xIsNext ? "X" : "O"}`;
 
     return (
-        <Center bg='bg.muted' borderRadius='lg' h={360} w={360}>
+        <Center bg='bg.muted' borderRadius='lg' h={360} w={{ base: "100%", md: 360 }}>
             <VStack gap={2}>
                 <Text>{status}</Text>
                 <VStack gap={0}>
