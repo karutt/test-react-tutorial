@@ -1,5 +1,5 @@
-import ClientProvider from "@/components/common/ClientProvider";
-
+// import { Provider } from "@/components/ui/provider";
+import ClientProvider from "@/components/ui/client-provider";
 import "@/styles/globals.css";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
