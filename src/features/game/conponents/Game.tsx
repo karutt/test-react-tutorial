@@ -8,7 +8,6 @@ import { MdOutlineArrowBack } from "react-icons/md";
 import { Board } from "./Board";
 import HistoryTable from "./HistoryTable";
 
-// ゲーム全体を管理するコンポーネント
 export function Game() {
     const [squares, setSquares] = useState<Array<string | null>>(Array(9).fill(null));
     const [xIsNext, setXIsNext] = useState<boolean>(false);

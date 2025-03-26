@@ -1,5 +1,3 @@
-"use client";
-
 import { Center, HStack, Text, VStack } from "@chakra-ui/react";
 import { calculateWinner } from "../utils/calculateWinner";
 import { Square } from "./Square";
@@ -20,7 +18,6 @@ export function Board({ squares, xIsNext, onPlay }: BoardProps) {
         onPlay(squaresCopy);
     }
 
-    // すでに埋まっているマスの数をカウント
     const cnt = squares.reduce((acc, cur) => (cur ? acc + 1 : acc), 0);
 
     const winner = calculateWinner(squares);
@@ -31,7 +28,7 @@ export function Board({ squares, xIsNext, onPlay }: BoardProps) {
           : `Next player: ${xIsNext ? "X" : "O"}`;
 
     return (
-        <Center bg='gray.100' borderRadius='lg' h={500} w={500}>
+        <Center bg='bg.muted' borderRadius='lg' h={360} w={360}>
             <VStack gap={2}>
                 <Text>{status}</Text>
                 <VStack gap={0}>

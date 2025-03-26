@@ -1,5 +1,3 @@
-"use client";
-
 import { IconButton } from "@chakra-ui/react";
 import { IoMdClose } from "react-icons/io";
 import { VscCircleLarge } from "react-icons/vsc";
@@ -14,8 +12,10 @@ export function Square({ value, onSquareClick }: SquareProps) {
         <IconButton
             variant='outline'
             onClick={onSquareClick}
-            bg='white'
+            bg='bg.panel'
             size='2xl'
+            _hover={{ bg: "bg.muted" }}
+            _motionSafe={{ transition: "0s" }}
             aria-label='Square'>
             {value === "X" ? <IoMdClose size={10} /> : value === "O" ? <VscCircleLarge /> : null}
         </IconButton>

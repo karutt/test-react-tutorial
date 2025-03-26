@@ -1,4 +1,3 @@
-"use client";
 import { Button, Card, Center } from "@chakra-ui/react";
 
 import Link from "next/link";
