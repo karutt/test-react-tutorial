@@ -45,13 +45,13 @@ export const metadata: Metadata = {
     alternates: {
         canonical: url,
     },
-    viewport: {
-        width: "device-width",
-        initialScale: 1,
-    },
     icons: {
         icon: "/favicon.ico",
     },
+};
+export const viewport = {
+    width: "device-width",
+    initialScale: 1,
 };
 
 export default function RootLayout({
