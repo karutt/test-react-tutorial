@@ -1,17 +1,11 @@
 import { For, Table, VStack } from "@chakra-ui/react";
 
-
 interface HistoryTableProps {
     history: Array<Array<string | null>>;
     jumpTo: (move: number) => void;
-
 }
 
-export default function HistoryTable({
-    history,
-    jumpTo,
-
-}: HistoryTableProps) {
+export default function HistoryTable({ history, jumpTo }: HistoryTableProps) {
     return (
         <VStack
             border='solid 1px'
@@ -50,7 +44,6 @@ export default function HistoryTable({
                     </For>
                 </Table.Body>
             </Table.Root>
-
         </VStack>
     );
 }
