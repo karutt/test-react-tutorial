@@ -1,14 +1,30 @@
-import { Center, HStack, Text, VStack } from "@chakra-ui/react";
+import { Center, HStack, IconButton, Text, VStack } from "@chakra-ui/react";
+
+import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
+import { RiResetLeftLine } from "react-icons/ri";
 import { calculateWinner } from "../utils/calculateWinner";
 import { Square } from "./Square";
-
 interface BoardProps {
     squares: Array<string | null>;
     xIsNext: boolean;
     onPlay: (newSquares: Array<string | null>) => void;
+    handleNext: () => void;
+    handlePrev: () => void;
+    handleReset: () => void;
+    popHistoryIsEmpty: boolean;
+    historyIsEmpty: boolean;
 }
 
-export function Board({ squares, xIsNext, onPlay }: BoardProps) {
+export function Board({
+    squares,
+    xIsNext,
+    onPlay,
+    handleNext,
+    handlePrev,
+    handleReset,
+    popHistoryIsEmpty,
+    historyIsEmpty,
+}: BoardProps) {
     function handleClick(i: number) {
         if (squares[i] || calculateWinner(squares)) {
             return;
@@ -44,6 +60,25 @@ export function Board({ squares, xIsNext, onPlay }: BoardProps) {
                         </HStack>
                     ))}
                 </VStack>
+                <HStack mt={4}>
+                    <IconButton
+                        variant='outline'
+                        size='sm'
+                        onClick={handlePrev}
+                        disabled={historyIsEmpty}>
+                        <FiArrowLeft />
+                    </IconButton>
+                    <IconButton
+                        variant='outline'
+                        disabled={popHistoryIsEmpty}
+                        size='sm'
+                        onClick={handleNext}>
+                        <FiArrowRight />
+                    </IconButton>
+                    <IconButton variant='outline' size='sm' onClick={handleReset}>
+                        <RiResetLeftLine />
+                    </IconButton>
+                </HStack>
             </VStack>
         </Center>
     );
